@@ -13,28 +13,47 @@
                 <a class="logo-text">Sinops : Library</a>
             </h1>
         </div>
-        <div class="login-signup-container">
-            <ul class="registration-options">
+        <ul class="registration-options">
                 <li class="sign-in-option login">Login</li>
                 <li class="sign-in-option sign-up">Sign up</li>
-            </ul>   
-        </div>
+        </ul>   
+        
 
     </header>
     <main>
+        <div class="current-book-count-wrapper new-book-button-wrapper">
+            <h3 class="current-books-text">
+                current books (2)
+            </h3>
+
+            <button type="submit" class="new-book-button">
+                add book
+            </button>
+        </div>
+        
         <div class="books-items-container">
+            
             <ul class="books-list">
                 <li class="book-item">
-                    <h3 class="title">The hobbit</h3>
+                    <h3 class="title">The Hobbit</h3>
                     <h3 class="author">J.R.R Tolkein</h3>
                     <h3 class="pages">244</h3>
-                    <h3 class="read">read</h3>
+                    <div class="read-status">
+                        <img class='read' src="assets/icons/check.png" alt="read-status">
+                    </div>
+                </li>
+                <li class="book-item">
+                    <h3 class="title">Harry Potter</h3>
+                    <h3 class="author">JK Rowling</h3>
+                    <h3 class="pages">244 pages</h3>
+                    <div class="read-status">
+                        <img class='pending' src="assets/icons/exclamation-thick.png" alt="read-status">
+                    </div>
                 </li>
             </ul>    
         </div>
     </main>
     <footer>
-        devoloped by @sultanshahdev
     </footer>
 </body>
 </html>

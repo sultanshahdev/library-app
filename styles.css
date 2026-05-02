@@ -218,6 +218,11 @@ Interactive
 Add the correct display in Chrome and Safari.
 */
 
+*
+{
+    margin:0;
+    padding:0;
+}
 summary {
 	display: list-item;
 }
@@ -228,9 +233,116 @@ body
     height: 100vh;
     display:grid;
     grid-template-rows: max-content 1fr max-content;
-    
+
 }
 
 
+header
+{
+    display:grid;
+    grid-template-columns: max-content 1fr max-content;
 
+    border-bottom: 1px solid black;
+    padding:1rem;
+}
+ul
+{
+    list-style: none;
+}
 
+.registration-options
+{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: right;
+    gap:1.1rem;
+    place-items: center;
+}
+.book-items-container
+{
+    display:grid;
+
+}
+.books-list
+{
+    display:flex;
+    grid-auto-flow: column;
+    gap:1rem;
+    flex-wrap: wrap;
+}
+.book-item
+{
+    display:grid;
+    grid-template-rows: max-content 4rem max-content max-content max-content ;
+    font-size: large;
+    padding: 1.2rem;
+    justify-items: center;
+    border: 1px solid black;
+    border-left: 10px solid skyblue;
+    border-right: 4px solid skyblue;
+    border-radius: 4px;
+    
+    gap:10px;
+    
+}
+.author
+{
+    grid-row: 3;
+    font-size: small;
+}
+.pages
+{
+    grid-row: 4;
+    font-size: small;
+}
+.read-status
+{
+    grid-row: 5;
+}
+
+.book-item img
+{
+    width: 1.8rem;
+    border-radius: 1000px;
+}
+
+.book-item .read
+{
+    
+    background-color: green;
+   background-color: rgba(66, 194, 34, 0.671);
+}
+.book-item .pending
+{
+    background-color: rgba(245, 209, 4, 0.753);
+}
+main
+{
+    
+    display:grid;
+    grid-template-rows: max-content max-content;
+    gap:10px;
+    padding: 1rem;
+
+}
+main .new-book-button-wrapper
+{
+    display:grid;
+    grid-template-columns: max-content 1fr max-content;
+    
+}
+.new-book-button
+{
+    grid-column: 3;
+}
+.new-book-button
+{
+    appearance: none;
+    background-color: white;
+    padding:0 1rem;
+}
+.current-books-text
+{
+    font-size: 1rem;
+    font-weight: bold;
+}
