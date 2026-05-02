@@ -1,0 +1,114 @@
+let BookAdder=new function()
+{
+    this.currentBookBeingAdded={};
+    this.currentBookElements=[];
+    this.currenBookItem={};
+    this.currentBookPropertyBeingAdded={};
+    
+}
+BookAdder.prototype.addBook=
+function()
+{
+    checkForBookDataAvailabilty();
+    createBookElements();
+    createBookCard();
+    addBookElementsToBookCard();
+    addBookToBooksList();
+    resetInstanceVariables();
+};
+BookAdder.prototype.checkForBookDataAvailabilty()
+{
+    if(this.currentBookBeingAdded==undefined)
+    {
+        throw new Error("there must be a book reference in order to add that!");
+    }
+}
+BookAdder.prototype.setBookToBeAdded(book)
+{
+    this.currentBookBeingAdded=book;
+}
+BookAdder.prototype.resetInstanceVariables
+=function()
+{
+    this.currenBookListItemElement={};
+    this.currentBookElements=[];
+    this.currentBookPropertyBeingAdded={};
+    this.currentBookBeingAdded={};
+}
+
+BookAdder.prototype.createBookElements=
+function()
+{
+    createTitlePropertyElement();
+    createAuthorPropertyElement();
+    createPagesReadPropertyElement();
+    createReadStatusPropertyElement();
+};
+BookAdder.prototype.createTitlePropertyElement=
+function()
+{
+    createNewBookPropertyElement();
+    addClassBookProperty();
+    addInnerData(this.currentBookBeingAdded.title);
+    insertBookElementToList();
+}
+BookAdder.prototype.createAuthorPropertyElement=
+function()
+{
+    createNewBookPropertyElement();
+    addClassBookProperty();
+    addInnerData(this.currentBookBeingAdded.author);
+    insertBookElementToList();
+}
+BookAdder.prototype.createReadStatusPropertyElement=
+function()
+{
+    createNewBookPropertyElement();
+    addClassBookProperty();
+    addInnerData(this.currentBookBeingAdded.readStatus);
+    insertBookElementToList();
+}
+BookAdder.prototype.createPagesReadPropertyElement=
+function()
+{
+    createNewBookPropertyElement();
+    addClassBookProperty();
+    addInnerData(this.currentBookBeingAdded.pageCount);
+    insertBookElementToList();
+}
+BookAdder.prototype.createNewBookPropertyElement()
+{
+    this.currentBookBeingAdded= document.createElement('h3');
+}
+BookAdder.prototype.addClassBookProperty()
+{
+    this.currentBookBeingAdded.addClass('book-item-property');
+}
+BookAdder.prototype.insertBookElementToList()
+{
+    this.currentBookElements.push(this.currentBookPropertyBeingAdded);
+}
+
+
+BookAdder.prototype.createBookCard=
+function()
+{
+    createBookCardElement();
+    addClassBookItem();
+};
+
+BookAdder.prototype.createBookCardElement=
+function()
+{
+    this.currenBookListItemElement=document.createElement('li');
+};
+BookAdder.prototype.addClassBookItem=
+function()
+{
+    this.currenBookListItemElement.addClass('book-item');
+}
+BookAdder.prototype.addBookToBooksList=
+function()
+{
+    document.querySelector('book-list').appendChild(currenBookItem);
+}
